@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 public class ReadyPlay extends JPanel {
 	private JButton start = new JButton("開始遊戲");
+	private static boolean Begin;
 
 	ReadyPlay(){
 		setLayout(null);
@@ -36,7 +37,7 @@ public class ReadyPlay extends JPanel {
 					PlayGame.timer[2][i].start();
 					PlayGame.timer[3][i].start();
 				}
-				
+				Begin = true;
 			}
 		});
 		
@@ -88,4 +89,7 @@ public class ReadyPlay extends JPanel {
 		g.drawString(" 本花色的點數", 150, 530);
 	}
 	
+	public static boolean isBegin(){
+		return Begin;
+	}
 }
